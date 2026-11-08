@@ -254,11 +254,11 @@ export const siteConfig = {
     hints: {
       mobile: {
         eyebrow: "Verken",
-        message: "Scroll naar links of rechts om over de kaart te bewegen.",
+        message: "Scroll naar links of rechts om over de kaart te bewegen en tik op een plek om meer te ontdekken.",
       },
       desktop: {
         eyebrow: "Ontdek",
-        message: "Beweeg de muis over het landschap.",
+        message: "Beweeg de muis over het landschap en klik op een plek.",
       },
     },
     hotspots: [
@@ -282,11 +282,13 @@ export const siteConfig = {
           "/map-overlays/text/horses.webp",
         ],
         explanation: {
-          text: "Onze kudde leeft in vrijheid en nodigt uit tot rustige ontmoeting en paardencoaching.",
+          text: "Onze kleine kudde nodigt uit tot rustige ontmoeting en paardencoaching.",
           x: 420,
           y: 1030,
           width: 710,
         },
+        label: "Paardencoaching",
+        to: "/welzijn/paardencoaching",
         padding: 40,
       },
       {
@@ -305,6 +307,8 @@ export const siteConfig = {
           y: 1715,
           width: 650,
         },
+        label: "Schuur",
+        to: "/verhuur",
         padding: 40,
       },
       {
@@ -318,11 +322,13 @@ export const siteConfig = {
           "/map-overlays/text/vake-tree.webp",
         ],
         explanation: {
-          text: "Een vertrouwde schaduwplek op het erf, dichtbij de dieren en de schuur.",
+          text: "Ontdek het rijke blogarchief van Daniel Willaeys.",
           x: 1340,
           y: 1380,
           width: 610,
         },
+        label: "Vake's blogarchief",
+        to: "https://fruit.wilhalla.be",
         padding: 40,
       },
       {
@@ -341,6 +347,8 @@ export const siteConfig = {
           y: 1130,
           width: 720,
         },
+        label: "Samentuin",
+        to: "/over-ons/samentuin",
         padding: 40,
       },
       {
@@ -359,6 +367,8 @@ export const siteConfig = {
           y: 1690,
           width: 650,
         },
+        label: "Welzijn in de yurt",
+        to: "/welzijn",
         padding: 40,
       },
       {
@@ -371,6 +381,8 @@ export const siteConfig = {
           "/map-overlays/hover/swallows.webp",
           "/map-overlays/text/trek-mee-naar-kameroen.webp",
         ],
+        label: "CoZoeGo",
+        to: "https://cozoego.be/",
         padding: 40,
       },
       {
@@ -401,12 +413,6 @@ export const siteConfig = {
           "/map-overlays/hover/trampoline.webp",
           "/map-overlays/text/trampoline.webp",
         ],
-        explanation: {
-          text: "Een speelse plek tussen het groen, voor kinderen en lichte pauzes.",
-          x: 1580,
-          y: 900,
-          width: 560,
-        },
         includeInIntro: false,
       },
       {
@@ -417,7 +423,7 @@ export const siteConfig = {
         y2: 1639,
         hoverImages: ["/map-overlays/text/parking.webp"],
         explanation: {
-          text: "Parkeer hier en wandel verder het domein in.",
+          text: "Parkeer hier en ga te voet verder het domein in.",
           x: 1150,
           y: 1585,
           width: 500,
@@ -453,7 +459,7 @@ export const siteConfig = {
           "/map-overlays/text/halle-dorp.webp",
         ],
         explanation: {
-          text: "Wilhalla ligt tussen Halle-Dorp en het Zoerselbos: dorps nabij, bos dichtbij.",
+          text: "Wilhalla ligt buiten het centrum van Halle-Dorp aan de rand van het Zoerselbos.",
           x: 1140,
           y: 1455,
           width: 680,
@@ -468,7 +474,7 @@ export const siteConfig = {
         y2: 1589,
         hoverImages: ["/map-overlays/text/bijen.webp"],
         explanation: {
-          text: "De bijen helpen de tuin bloeien en houden de biodiversiteit mee in beweging.",
+          text: "Onze honingbijen helpen de tuin mee bloeien en geven ons zoets.",
           x: 3080,
           y: 1150,
           width: 660,

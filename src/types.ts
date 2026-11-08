@@ -44,6 +44,11 @@ export type PageConfig = {
   intro: string;
 };
 
+export type MapLink = {
+  label: string;
+  to: string
+};
+
 export type MapHotspotConfig = {
   id: string;
   label: string;
@@ -58,6 +63,7 @@ export type MapSentinelExplanation = {
   y: number;
   width?: number;
   height?: number;
+  linklabel?: string;
 };
 
 export type MapSentinelConfig = {
@@ -68,6 +74,7 @@ export type MapSentinelConfig = {
   y2: number;
   hoverImages: readonly string[];
   explanation?: MapSentinelExplanation;
+  lin?: MapLink;
   includeInIntro?: boolean;
   padding?: number;
 };
