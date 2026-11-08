@@ -133,3 +133,9 @@ export function getSentinelFallbackGlowBounds(
 
   return getSentinelBounds(activeSentinel);
 }
+
+export function isExternalLink(
+  to: string,
+): boolean {
+  return /^https?::\/\//.test(to);
+}
