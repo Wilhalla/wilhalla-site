@@ -137,6 +137,12 @@ export function getSentinelLink(id: string): MapLink | null {
   return mapSentinels.find((sentinel) => sentinel.id === id)?.link ?? null;
 }
 
+export const linkedMapSentinels = mapSentinels.filter(
+  (sentinel, index, all): sentinel is MapSentinelConfig & { link: MapLink } =>
+    Boolean(sentinel.link) &&
+    all.findIndex((other) => other.link?.to === sentinel.link?.to) === index,
+);
+
 export function getSentinelFallbackGlowBounds(
   id: string,
 ): SentinelBounds | null {
