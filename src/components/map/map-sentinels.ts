@@ -1,9 +1,9 @@
 import { interactiveMapRegistry } from "@/config/registries";
-import type { MapSentinelConfig, MapSentinelExplanation } from "@/types";
+import type { MapLink, MapSentinelConfig, MapSentinelExplanation } from "@/types";
 
-export type { MapSentinelConfig, MapSentinelExplanation };
+export type { MapLink, MapSentinelConfig, MapSentinelExplanation };
 
-export const mapSentinels = interactiveMapRegistry.sentinels;
+export const mapSentinels: readonly MapSentinelConfig[] = interactiveMapRegistry.sentinels;
 
 export type SentinelBounds = {
   minX: number;
@@ -112,12 +112,29 @@ export function getSentinelTextImages(id: string): string[] {
   ].filter((image) => image.includes("/map-overlays/text/"));
 }
 
+const explanationsById = new Map<string, MapSentinelExplanation>(
+  mapSentinels.flatMap((sentinel) =>
+    sentinel.explanation
+      ? [
+          [
+            sentinel.id,
+            sentinel.link
+              ? { ...sentinel.explanation, linkLabel: sentinel.link.label }
+              : sentinel.explanation,
+          ] as const,
+        ]
+      : [],
+  ),
+);
+
 export function getSentinelExplanation(
   id: string,
 ): MapSentinelExplanation | null {
-  return (
-    mapSentinels.find((sentinel) => sentinel.id === id)?.explanation ?? null
-  );
+  return explanationsById.get(id) ?? null;
+}
+
+export function getSentinelLink(id: string): MapLink | null {
+  return mapSentinels.find((sentinel) => sentinel.id === id)?.link ?? null;
 }
 
 export function getSentinelFallbackGlowBounds(
