@@ -38,8 +38,8 @@ export const siteConfig = {
 
   contact: {
     name: "Wilhalla",
-    email: "wilhalla@hotmail.com",
-    mailto: "mailto:wilhalla@hotmail.com",
+    email: "info@wilhalla.be",
+    mailto: "mailto:info@wilhalla.be",
   },
 
   location: {
